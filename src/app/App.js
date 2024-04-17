@@ -19,8 +19,12 @@ const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/sign-up" element={ <SignUp/> } />
     <Route path="/articles" element={ <Articles/> } />
     <Route path="/articles/:title" element={ <Article/> } />
-    <Route path="/categories" element={ <Categories/> } />
-    <Route path="/profile" element={ <Profile/> } />
+    <Route path="/categories" element={ <Categories/> }>
+      <Route path=":name" element={ <Category/> } />
+    </Route>
+    <Route path="/profile" element={ <Profile/> }>
+      <Route path="edit" element={ <EditProfileForm/> } />
+    </Route>
     <Route path="/authors/:name" element={ <Author/> } /> 
   </Route>
 ));
